@@ -8,12 +8,36 @@
 
 #import "FDCompareViewController.h"
 #import <AFNetworking/AFNetworking.h>
+#import "DayViewController.h"
 
 @interface FDCompareViewController ()
 
 @end
 
 @implementation FDCompareViewController
+
+#pragma mark - Segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"daySegue"])
+    {
+        if ([segue.destinationViewController isKindOfClass:[DayViewController class]])
+        {
+            //load in data to the next view here
+            DayViewController *dvc = (DayViewController *)segue.destinationViewController;
+            NSString *test = @"tester";
+            dvc.testReceive = [[NSString alloc] init];
+            dvc.testReceive = test;
+            
+        }
+    }
+    
+    
+}
+
+
+#pragma mark - Your Methods
 
 - (void)viewDidLoad {
     if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]) {

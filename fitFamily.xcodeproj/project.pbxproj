@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0CC66183D80CC0622FB999AF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8021261AFEA2FC29589A747F /* libPods.a */; };
+		3D0CDA421B5B3E4B00CC7C60 /* DayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D0CDA411B5B3E4B00CC7C60 /* DayViewController.m */; };
+		3D0CDA4A1B5B4CB000CC7C60 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D0CDA491B5B4CB000CC7C60 /* CoreData.framework */; };
+		3D0CDA4D1B5B538300CC7C60 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3D0CDA4B1B5B538300CC7C60 /* Model.xcdatamodeld */; };
 		3DFD477B1B5AB17000D55582 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFD477A1B5AB17000D55582 /* main.m */; };
 		3DFD477E1B5AB17000D55582 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFD477D1B5AB17000D55582 /* AppDelegate.m */; };
 		3DFD47811B5AB17000D55582 /* fitFamily.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3DFD477F1B5AB17000D55582 /* fitFamily.xcdatamodeld */; };
@@ -32,6 +35,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D0CDA401B5B3E4B00CC7C60 /* DayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayViewController.h; sourceTree = "<group>"; };
+		3D0CDA411B5B3E4B00CC7C60 /* DayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayViewController.m; sourceTree = "<group>"; };
+		3D0CDA491B5B4CB000CC7C60 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		3D0CDA4C1B5B538300CC7C60 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		3DFD47751B5AB17000D55582 /* fitFamily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fitFamily.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DFD47791B5AB17000D55582 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3DFD477A1B5AB17000D55582 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -46,10 +53,10 @@
 		3DFD47971B5AB17000D55582 /* fitFamilyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = fitFamilyTests.m; sourceTree = "<group>"; };
 		4E33FF2E1B5B13FD00047069 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		4E33FF2F1B5B13FD00047069 /* SampleFitBit.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SampleFitBit.json; sourceTree = "<group>"; };
-		4E33FF321B5B215F00047069 /* FDCompareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDCompareViewController.h; path = FDCompareViewController.h; sourceTree = "<group>"; };
-		4E33FF331B5B215F00047069 /* FDCompareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FDCompareViewController.m; path = FDCompareViewController.m; sourceTree = "<group>"; };
-		4E33FF341B5B215F00047069 /* FDGraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDGraphViewController.h; path = FDGraphViewController.h; sourceTree = "<group>"; };
-		4E33FF351B5B215F00047069 /* FDGraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FDGraphViewController.m; path = FDGraphViewController.m; sourceTree = "<group>"; };
+		4E33FF321B5B215F00047069 /* FDCompareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDCompareViewController.h; sourceTree = "<group>"; };
+		4E33FF331B5B215F00047069 /* FDCompareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDCompareViewController.m; sourceTree = "<group>"; };
+		4E33FF341B5B215F00047069 /* FDGraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDGraphViewController.h; sourceTree = "<group>"; };
+		4E33FF351B5B215F00047069 /* FDGraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDGraphViewController.m; sourceTree = "<group>"; };
 		8021261AFEA2FC29589A747F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CC5EA309E662BBB1CA15A5C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		9861CB7D6B5358B04AF7E9EC /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -60,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D0CDA4A1B5B4CB000CC7C60 /* CoreData.framework in Frameworks */,
 				0CC66183D80CC0622FB999AF /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -106,6 +114,9 @@
 				3DFD477C1B5AB17000D55582 /* AppDelegate.h */,
 				3DFD477D1B5AB17000D55582 /* AppDelegate.m */,
 				3DFD47851B5AB17000D55582 /* Main.storyboard */,
+				3D0CDA401B5B3E4B00CC7C60 /* DayViewController.h */,
+				3D0CDA411B5B3E4B00CC7C60 /* DayViewController.m */,
+				3D0CDA4B1B5B538300CC7C60 /* Model.xcdatamodeld */,
 				3DFD47881B5AB17000D55582 /* Images.xcassets */,
 				3DFD478A1B5AB17000D55582 /* LaunchScreen.xib */,
 				3DFD477F1B5AB17000D55582 /* fitFamily.xcdatamodeld */,
@@ -143,6 +154,7 @@
 		AFA453BCCAE6DC2DD59B12D2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3D0CDA491B5B4CB000CC7C60 /* CoreData.framework */,
 				8021261AFEA2FC29589A747F /* libPods.a */,
 			);
 			name = Frameworks;
@@ -297,6 +309,8 @@
 				4E33FF361B5B215F00047069 /* FDCompareViewController.m in Sources */,
 				3DFD477E1B5AB17000D55582 /* AppDelegate.m in Sources */,
 				3DFD47811B5AB17000D55582 /* fitFamily.xcdatamodeld in Sources */,
+				3D0CDA421B5B3E4B00CC7C60 /* DayViewController.m in Sources */,
+				3D0CDA4D1B5B538300CC7C60 /* Model.xcdatamodeld in Sources */,
 				3DFD477B1B5AB17000D55582 /* main.m in Sources */,
 				4E33FF371B5B215F00047069 /* FDGraphViewController.m in Sources */,
 			);
@@ -509,6 +523,16 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
+		3D0CDA4B1B5B538300CC7C60 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3D0CDA4C1B5B538300CC7C60 /* Model.xcdatamodel */,
+			);
+			currentVersion = 3D0CDA4C1B5B538300CC7C60 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
 		3DFD477F1B5AB17000D55582 /* fitFamily.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
