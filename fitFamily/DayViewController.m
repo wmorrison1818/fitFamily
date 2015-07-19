@@ -14,12 +14,11 @@
 @interface DayViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) NSMutableArray *notifcationsArray;
+@property (strong, nonatomic) NSMutableArray *notificationsArray;
 @end
 
 
 @implementation DayViewController
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -28,12 +27,7 @@
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-#pragma mark UI Table View
+#pragma mark UITableViewDataSource
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
@@ -46,7 +40,7 @@
     
     // Configure the cell...
     
-    cell.textLabel.text = [self.notifcationsArray objectAtIndex:indexPath.row]; //objectatindexPath.row];
+    cell.textLabel.text = [self.notificationsArray objectAtIndex:indexPath.row]; //objectatindexPath.row];
     
     
     return cell;
@@ -61,7 +55,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [self.notifcationsArray count];
+    return [self.notificationsArray count];
 }
 
 #pragma mark Core Data
@@ -87,7 +81,7 @@
     NSArray *objects = [context executeFetchRequest:request
                                               error:&error];
     
-    self.notifcationsArray = [[NSMutableArray alloc] init];
+    self.notificationsArray = [[NSMutableArray alloc] init];
     
     if ([objects count] == 0)
     {
@@ -95,13 +89,13 @@
     }
     else
     {
-        for (int i = ((int)[objects count]-1); i >= 0; i--)//should reverse
+        for (NSInteger i = ([objects count]-1); i >= 0; i--)//should reverse
         {
             //saved data
             
             matches = objects[i];
             
-            [self.notifcationsArray addObject: [matches valueForKey:@"notificationBody"]];
+            [self.notificationsArray addObject: [matches valueForKey:@"notificationBody"]];
             
         }
     }
@@ -116,20 +110,15 @@
     NSManagedObjectContext *context = [appDelegate managedObjectContext];
     NSManagedObject *newNotification;
     newNotification = [NSEntityDescription insertNewObjectForEntityForName:@"Notification" inManagedObjectContext:context];
-    [newNotification setValue: @"hello" forKey:@"notificationBody"];
+    [newNotification setValue:[NSString stringWithFormat:@"%@ has more activity than you today!", appDelegate.dogName ?: @"Your dog"] forKey:@"notificationBody"];
     NSError *error;
     [context save:&error];
+    
+    if (error) {
+        NSLog(@"Error saving notification %@", error);
+    }
+    
     [self.tableView reloadData];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -27,6 +27,8 @@
 // Submit request to retrieve fitbit/FitBark activity
 - (IBAction)fitbitSubmit:(id)sender;
 - (IBAction)fitBarkSubmit:(id)sender;
+// Refresh fitbit/fitBark graphs if logged in
+- (void)refreshGraphs;
 
 @end
 

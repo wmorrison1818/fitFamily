@@ -63,7 +63,7 @@
 		4E33FF381B5B443600047069 /* FDDailyActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDDailyActivity.h; sourceTree = "<group>"; };
 		4E33FF391B5B443600047069 /* FDDailyActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDDailyActivity.m; sourceTree = "<group>"; };
 		4E33FF3B1B5B5CC800047069 /* FDActivityGraphViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FDActivityGraphViewController.xib; sourceTree = "<group>"; };
-		4E33FF3D1B5B81BB00047069 /* SampleFitBark.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = SampleFitBark.json; path = SampleFitBark.json; sourceTree = "<group>"; };
+		4E33FF3D1B5B81BB00047069 /* SampleFitBark.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SampleFitBark.json; sourceTree = "<group>"; };
 		8021261AFEA2FC29589A747F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CC5EA309E662BBB1CA15A5C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		9861CB7D6B5358B04AF7E9EC /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -115,21 +115,18 @@
 		3DFD47771B5AB17000D55582 /* fitFamily */ = {
 			isa = PBXGroup;
 			children = (
+				4EF431D91B5BCA8200FA58E8 /* Resources */,
+				3DFD477C1B5AB17000D55582 /* AppDelegate.h */,
+				3DFD477D1B5AB17000D55582 /* AppDelegate.m */,
+				3D0CDA401B5B3E4B00CC7C60 /* DayViewController.h */,
+				3D0CDA411B5B3E4B00CC7C60 /* DayViewController.m */,
+				4E33FF341B5B215F00047069 /* FDActivityGraphViewController.h */,
+				4E33FF351B5B215F00047069 /* FDActivityGraphViewController.m */,
 				4E33FF321B5B215F00047069 /* FDCompareViewController.h */,
 				4E33FF331B5B215F00047069 /* FDCompareViewController.m */,
 				4E33FF381B5B443600047069 /* FDDailyActivity.h */,
 				4E33FF391B5B443600047069 /* FDDailyActivity.m */,
-				4E33FF341B5B215F00047069 /* FDActivityGraphViewController.h */,
-				4E33FF351B5B215F00047069 /* FDActivityGraphViewController.m */,
-				4E33FF3B1B5B5CC800047069 /* FDActivityGraphViewController.xib */,
-				3DFD477C1B5AB17000D55582 /* AppDelegate.h */,
-				3DFD477D1B5AB17000D55582 /* AppDelegate.m */,
-				3DFD47851B5AB17000D55582 /* Main.storyboard */,
-				3D0CDA401B5B3E4B00CC7C60 /* DayViewController.h */,
-				3D0CDA411B5B3E4B00CC7C60 /* DayViewController.m */,
 				3D0CDA4B1B5B538300CC7C60 /* Model.xcdatamodeld */,
-				3DFD47881B5AB17000D55582 /* Images.xcassets */,
-				3DFD478A1B5AB17000D55582 /* LaunchScreen.xib */,
 				3DFD477F1B5AB17000D55582 /* fitFamily.xcdatamodeld */,
 				3DFD47781B5AB17000D55582 /* Supporting Files */,
 			);
@@ -160,6 +157,17 @@
 				3DFD47961B5AB17000D55582 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4EF431D91B5BCA8200FA58E8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4E33FF3B1B5B5CC800047069 /* FDActivityGraphViewController.xib */,
+				3DFD47881B5AB17000D55582 /* Images.xcassets */,
+				3DFD478A1B5AB17000D55582 /* LaunchScreen.xib */,
+				3DFD47851B5AB17000D55582 /* Main.storyboard */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		AFA453BCCAE6DC2DD59B12D2 /* Frameworks */ = {

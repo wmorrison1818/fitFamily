@@ -8,6 +8,7 @@
             <connections>
                 <outlet property="activityPlot" destination="LCr-pS-HY2" id="nTD-ty-6fw"/>
                 <outlet property="activityRange" destination="lfl-jd-wzt" id="2Nf-DN-ZO2"/>
+                <outlet property="spinner" destination="Mez-JK-4ff" id="che-YU-HTf"/>
                 <outlet property="view" destination="iN0-l3-epB" id="l6c-Mf-eaE"/>
             </connections>
         </placeholder>
@@ -33,6 +34,9 @@
                         <constraint firstAttribute="height" constant="140" id="TeR-hh-fAe"/>
                     </constraints>
                 </view>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Mez-JK-4ff">
+                    <rect key="frame" x="265.5" y="70" width="37" height="37"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -44,6 +48,8 @@
                 <constraint firstAttribute="bottom" secondItem="LCr-pS-HY2" secondAttribute="bottom" id="bcW-mG-e1o"/>
                 <constraint firstItem="LCr-pS-HY2" firstAttribute="top" secondItem="lfl-jd-wzt" secondAttribute="bottom" constant="8" id="fYu-av-hS3"/>
                 <constraint firstAttribute="trailing" secondItem="LCr-pS-HY2" secondAttribute="trailing" id="iAV-Pd-Qwn"/>
+                <constraint firstAttribute="centerY" secondItem="Mez-JK-4ff" secondAttribute="centerY" id="jPa-re-yhX"/>
+                <constraint firstAttribute="centerX" secondItem="Mez-JK-4ff" secondAttribute="centerX" id="lAp-uU-PMC"/>
                 <constraint firstItem="LCr-pS-HY2" firstAttribute="top" secondItem="lfl-jd-wzt" secondAttribute="bottom" constant="7" id="xYR-C3-hdD"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

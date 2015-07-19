@@ -8,15 +8,32 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol FDActivityGraphViewControllerDelegate;
+
+
 @interface FDActivityGraphViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *activityRange;
 @property (weak, nonatomic) IBOutlet UIView *activityPlot;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 // <FDDailyActivity *>
 @property (copy, nonatomic) NSArray *activity;
 // <NSDate *, NSNumber *>
 @property (strong, nonatomic) NSDictionary *activityPoints;
 @property (strong, nonatomic) NSDictionary *targetPoints;
-// How many days the graph displays
-@property (nonatomic) NSUInteger lookbackLength;
+// How many days the graph is displaying
+@property (nonatomic, readonly) NSUInteger lookbackLength;
+@property (nonatomic, getter=isLoading) BOOL loading;
+@property (nonatomic, weak) id <FDActivityGraphViewControllerDelegate>delegate;
+
+// Average percent activity of target per day
+- (CGFloat)averagePercentDoneForLookbackLength:(NSUInteger)lookbackLength;
+@end
+
+
+@protocol FDActivityGraphViewControllerDelegate <NSObject>
+
+// Fired when lookbackLength changed
+- (void)lookbackLengthDidChange:(FDActivityGraphViewController *)graphViewController;
+
 @end

@@ -33,6 +33,9 @@
     self.view.translatesAutoresizingMaskIntoConstraints = YES;
     self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleBottomMargin;
     
+    self.activityPlot.translatesAutoresizingMaskIntoConstraints = YES;
+    self.activityPlot.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+    
     // Add chart view to activityPlot subview
     self.chartView = [[JBLineChartView alloc] init];
     self.chartView.translatesAutoresizingMaskIntoConstraints = YES;
@@ -59,11 +62,24 @@
     [self.chartView reloadData];
 }
 
+- (void)setLoading:(BOOL)loading
+{
+    _loading = loading;
+    if (loading) {
+        [self.spinner startAnimating];
+    }
+    else {
+        [self.spinner stopAnimating];
+    }
+    
+//    self.spinner.hidden = !loading;
+}
+
 - (IBAction)segmentChanged:(id)sender {
     [self.chartView reloadData];
 }
 
-- (NSUInteger)selectedSegmentRange {
+- (NSUInteger)lookbackLength {
     return self.activityRange.selectedSegmentIndex == WEEK_SEGMENT_INDEX ? WEEK_RANGE : MONTH_RANGE;
 }
 
@@ -80,7 +96,7 @@
  * Return number of data points per line
  */
 - (NSUInteger)lineChartView:(JBLineChartView *)lineChartView numberOfVerticalValuesAtLineIndex:(NSUInteger)lineIndex {
-    return [self selectedSegmentRange];
+    return [self lookbackLength];
 }
 
 /**
@@ -158,9 +174,19 @@ colorForDotAtHorizontalIndex:(NSUInteger)horizontalIndex
     return 8.0f;
 }
 
+- (CGFloat)averagePercentDoneForLookbackLength:(NSUInteger)lookbackLength
+{
+    CGFloat total = 0.0f;
+    
+    for (NSInteger x = 0; x < lookbackLength && x < self.activity.count; x++) {
+        total += [[(FDDailyActivity *)self.activity[x] percentDone] floatValue];
+    }
+    return total/MIN(lookbackLength, self.activity.count);
+}
+
 #pragma mark - Helpers
 
-- (BOOL)isSameDay:(NSDate *)date1 :(NSDate *)date2
+- (BOOL)isSameDay:(NSDate *)date1 otherDate:(NSDate *)date2
 {
     NSCalendar *calendar = [NSCalendar autoupdatingCurrentCalendar];
     
@@ -174,7 +200,7 @@ colorForDotAtHorizontalIndex:(NSUInteger)horizontalIndex
 }
 
 - (NSUInteger)arrayIndexFromHorizontalIndex:(NSUInteger)horizontalIndex {
-    return [self selectedSegmentRange] - horizontalIndex - 1;
+    return [self lookbackLength] - horizontalIndex - 1;
 }
 
 @end

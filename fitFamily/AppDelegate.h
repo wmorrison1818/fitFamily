@@ -16,6 +16,8 @@
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+// Dog's name for use in notification
+@property (nonatomic, copy) NSString *dogName;
 
 
 - (void)saveContext;
