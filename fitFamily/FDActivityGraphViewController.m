@@ -18,7 +18,6 @@
 
 @interface FDActivityGraphViewController () <JBLineChartViewDataSource, JBLineChartViewDelegate>
 @property (nonatomic, strong) JBLineChartView *chartView;
-@property (nonatomic, copy) NSArray *orderedDates;
 @end
 
 @implementation FDActivityGraphViewController
@@ -50,12 +49,6 @@
     self.view.frame = self.view.superview.bounds;
 }
 
-- (void)setActivityPoints:(NSDictionary *)dataPoints {
-    _activityPoints = dataPoints;
-    
-    [self.chartView reloadData];
-}
-
 - (void)setActivity:(NSArray *)activity {
     _activity = activity;
     
@@ -71,8 +64,6 @@
     else {
         [self.spinner stopAnimating];
     }
-    
-//    self.spinner.hidden = !loading;
 }
 
 - (IBAction)segmentChanged:(id)sender {
@@ -185,19 +176,6 @@ colorForDotAtHorizontalIndex:(NSUInteger)horizontalIndex
 }
 
 #pragma mark - Helpers
-
-- (BOOL)isSameDay:(NSDate *)date1 otherDate:(NSDate *)date2
-{
-    NSCalendar *calendar = [NSCalendar autoupdatingCurrentCalendar];
-    
-    unsigned unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth |  NSCalendarUnitDay;
-    NSDateComponents *date1Components = [calendar components:unitFlags fromDate:date1];
-    NSDateComponents *date2Components = [calendar components:unitFlags fromDate:date2];
-    
-    return [date1Components day] == [date2Components day] &&
-    [date1Components month] == [date2Components month] &&
-    [date1Components year] == [date2Components year];
-}
 
 - (NSUInteger)arrayIndexFromHorizontalIndex:(NSUInteger)horizontalIndex {
     return [self lookbackLength] - horizontalIndex - 1;

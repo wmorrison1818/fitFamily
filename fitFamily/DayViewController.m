@@ -8,30 +8,50 @@
 
 #import "DayViewController.h"
 #import "FDCompareViewController.h"
-
+#import <JBChartView/JBBarChartView.h>
+#import "FDDailyActivity.h"
+#import "FDDayViewFooterViewController.h"
 #import "AppDelegate.h"
 
-@interface DayViewController ()
+@interface DayViewController () <JBBarChartViewDataSource, JBBarChartViewDelegate>
 
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *notificationsArray;
+
+// Day bar graph view
+@property (nonatomic, weak) IBOutlet JBBarChartView *barChartView;
 @end
 
 
 @implementation DayViewController
 
+- (void)dealloc {
+    self.barChartView.delegate = nil;
+    self.barChartView.dataSource = nil;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self loadNotifications];
     
-    // Do any additional setup after loading the view.
+    self.barChartView.translatesAutoresizingMaskIntoConstraints = YES;
+    self.barChartView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+    self.barChartView.delegate = self;
+    self.barChartView.dataSource = self;
+//    self.barChartView.footerView = [[[FDDayViewFooterViewController alloc] initWithNibName:nil bundle:nil] view];
+    [self.barChartView reloadData];
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    self.barChartView.frame = CGRectMake(self.barChartView.frame.origin.x, self.barChartView.frame.origin.y, self.tableView.frame.size.width, self.barChartView.frame.size.height);
+    [self.barChartView reloadData];
 }
 
 #pragma mark UITableViewDataSource
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"notification" forIndexPath:indexPath];
     
     if (cell == nil)
@@ -146,6 +166,48 @@
     }
     
     [self.tableView reloadData];
+}
+
+#pragma mark - JBBarChartViewDataSource
+
+- (NSUInteger)numberOfBarsInBarChartView:(JBBarChartView *)barChartView {
+    return 6;
+}
+
+- (CGFloat)barChartView:(JBBarChartView *)barChartView heightForBarViewAtIndex:(NSUInteger)index {
+    switch ((index + 1) / 3) {
+        case 0:
+            if ((index + 1) % 2 == 0) {
+                return [self.userActivity.minRest floatValue];
+            }
+            else {
+                return [self.dogActivity.minRest floatValue];
+            }
+            break;
+        case 1:
+            if ((index + 1) % 2 == 0) {
+                return [self.userActivity.minActive floatValue];
+            }
+            else {
+                return [self.dogActivity.minActive floatValue];
+            }
+            break;
+        case 2:
+        default:
+            if ((index + 1) % 2 == 0) {
+                return [self.userActivity.minPlay floatValue];
+            }
+            else {
+                return [self.dogActivity.minPlay floatValue];
+            }
+            break;
+    }
+    return 0;
+}
+
+- (UIColor *)barChartView:(JBBarChartView *)barChartView colorForBarViewAtIndex:(NSUInteger)index
+{
+    return [UIColor colorWithRed:0 green:0 blue:0 alpha:1];
 }
 
 @end

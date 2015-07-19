@@ -21,6 +21,15 @@
 
 @implementation FDCompareViewController
 
++ (FDDailyActivity *)activityForToday:(NSArray *)activity {
+    for (FDDailyActivity *dailyActivity in activity) {
+        if ([[NSCalendar autoupdatingCurrentCalendar] isDate:[NSDate date] inSameDayAsDate:dailyActivity.date]) {
+            return dailyActivity;
+        }
+    }
+    return nil;
+}
+
 #pragma mark - Segue
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -32,6 +41,8 @@
             dvc.testReceive = [[NSString alloc] init];
             dvc.testReceive = test;
             
+            dvc.userActivity = [FDCompareViewController activityForToday:self.fitbitGraph.activity];
+            dvc.dogActivity = [FDCompareViewController activityForToday:self.fitBarkGraph.activity];
         }
     }
 }
@@ -188,6 +199,7 @@
         [self updateActivityCompareMessage];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         [weakSelf presentRequestFailedAlert];
+        weakSelf.fitBarkGraph.loading = NO;
         NSLog(@"Error: %@", error);
     }];
 }
@@ -215,6 +227,7 @@
         [self updateActivityCompareMessage];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         [weakSelf presentRequestFailedAlert];
+        weakSelf.fitBarkGraph.loading = NO;
         NSLog(@"Error: %@", error);
     }];
 }

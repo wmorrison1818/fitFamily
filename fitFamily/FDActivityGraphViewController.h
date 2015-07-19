@@ -18,9 +18,6 @@
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 // <FDDailyActivity *>
 @property (copy, nonatomic) NSArray *activity;
-// <NSDate *, NSNumber *>
-@property (strong, nonatomic) NSDictionary *activityPoints;
-@property (strong, nonatomic) NSDictionary *targetPoints;
 // How many days the graph is displaying
 @property (nonatomic, readonly) NSUInteger lookbackLength;
 @property (nonatomic, getter=isLoading) BOOL loading;

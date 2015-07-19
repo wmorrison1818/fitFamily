@@ -19,7 +19,14 @@
     activity.minPlay = [dictionary objectForKey:@"min_play"];
     activity.minRest = [dictionary objectForKey:@"min_rest"];
     activity.target = [dictionary objectForKey:@"target"];
-    activity.date = [dictionary objectForKey:@"date"];
+    
+    static NSDateFormatter *df = nil;
+    
+    if (df == nil) {
+        df = [NSDateFormatter new];
+        [df setDateFormat:@"yyyy-MM-dd"];
+    }
+    activity.date = [df dateFromString:[dictionary objectForKey:@"date"]];
     
     return activity;
 }

@@ -107,7 +107,7 @@
                     <navigationItem key="navigationItem" id="7qe-PW-kfQ">
                         <barButtonItem key="rightBarButtonItem" title="Day" id="x7D-Nx-YPc">
                             <connections>
-                                <segue destination="DSG-iC-luD" kind="show" id="YWM-dK-2ci"/>
+                                <segue destination="DSG-iC-luD" kind="show" identifier="daySegue" id="YWM-dK-2ci"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -135,7 +135,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fzd-W1-oO7">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fzd-W1-oO7" customClass="JBBarChartView">
                                 <rect key="frame" x="16" y="72" width="568" height="243"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -173,6 +173,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="MUP-zp-9l1"/>
+                    <connections>
+                        <outlet property="barChartView" destination="fzd-W1-oO7" id="K5e-5Q-VJe"/>
+                        <outlet property="tableView" destination="gj9-6D-hT6" id="8Yx-Vl-dyo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QjH-zm-qOS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
