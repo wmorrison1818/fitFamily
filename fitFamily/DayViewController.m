@@ -13,6 +13,7 @@
 
 @interface DayViewController ()
 
+
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *notificationsArray;
 @end
@@ -110,7 +111,33 @@
     NSManagedObjectContext *context = [appDelegate managedObjectContext];
     NSManagedObject *newNotification;
     newNotification = [NSEntityDescription insertNewObjectForEntityForName:@"Notification" inManagedObjectContext:context];
-    [newNotification setValue:[NSString stringWithFormat:@"%@ has more activity than you today!", appDelegate.dogName ?: @"Your dog"] forKey:@"notificationBody"];
+    int num1 = arc4random()%6;
+    switch (num1)
+    {
+        case 1:
+            [newNotification setValue:[NSString stringWithFormat:@"%@ has more activity than you today!", appDelegate.dogName ?: @"Your dog"] forKey:@"notificationBody"];
+            break;
+        case 2:
+            [newNotification setValue:[NSString stringWithFormat:@"%@ is lagging behind!!", appDelegate.dogName ?: @"Your dog"] forKey:@"notificationBody"];
+            break;
+        case 3:
+            [newNotification setValue:[NSString stringWithFormat:@"You should sync your fitBit"] forKey:@"notificationBody"];
+            break;
+        case 4:
+            [newNotification setValue:[NSString stringWithFormat:@"You should sync your fitBark"] forKey:@"notificationBody"];
+            break;
+        case 5:
+            [newNotification setValue:[NSString stringWithFormat:@"Congratulations on both reaching your goals today!"] forKey:@"notificationBody"];
+            break;
+        case 0:
+            [newNotification setValue:[NSString stringWithFormat:@"None of you have reached your goals yet!"] forKey:@"notificationBody"];
+            break;
+            
+        default:
+            [newNotification setValue:[NSString stringWithFormat:@"Time to go for a walk!"] forKey:@"notificationBody"];
+            break;
+    }
+    
     NSError *error;
     [context save:&error];
     

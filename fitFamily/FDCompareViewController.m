@@ -13,6 +13,9 @@
 #import "AppDelegate.h"
 
 @interface FDCompareViewController ()
+{
+    int ranNum;
+}
 
 @end
 
@@ -44,20 +47,96 @@
     if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]) {
         [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeSound|UIUserNotificationTypeBadge categories:nil]];
     }
+    ranNum = arc4random()%6;
     
     [self fitbitGraph];
     [self fitBarkGraph];
 }
 
+- (void) saveNotification
+{
+    //save info
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    
+    NSManagedObjectContext *context = [appDelegate managedObjectContext];
+    NSManagedObject *newNotification;
+    newNotification = [NSEntityDescription insertNewObjectForEntityForName:@"Notification" inManagedObjectContext:context];
+    //int num1 = arc4random()%6;
+    switch (ranNum)
+    {
+        case 1:
+            [newNotification setValue:[NSString stringWithFormat:@"%@ has more activity than you today!", appDelegate.dogName ?: @"Your dog"] forKey:@"notificationBody"];
+            break;
+        case 2:
+            [newNotification setValue:[NSString stringWithFormat:@"%@ is lagging behind!!", appDelegate.dogName ?: @"Your dog"] forKey:@"notificationBody"];
+            break;
+        case 3:
+            [newNotification setValue:[NSString stringWithFormat:@"You should sync your fitBit"] forKey:@"notificationBody"];
+            break;
+        case 4:
+            [newNotification setValue:[NSString stringWithFormat:@"You should sync your fitBark"] forKey:@"notificationBody"];
+            break;
+        case 5:
+            [newNotification setValue:[NSString stringWithFormat:@"Congratulations on both reaching your goals today!"] forKey:@"notificationBody"];
+            break;
+        case 0:
+            [newNotification setValue:[NSString stringWithFormat:@"None of you have reached your goals yet!"] forKey:@"notificationBody"];
+            break;
+            
+        default:
+            [newNotification setValue:[NSString stringWithFormat:@"Time to go for a walk!"] forKey:@"notificationBody"];
+            break;
+    }
+    
+    NSError *error;
+    [context save:&error];
+    
+    if (error) {
+        NSLog(@"Error saving notification %@", error);
+    }
+}
+
 - (IBAction)buttonPressed:(id)sender {
     // Create new UILocalNotification object.
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     UILocalNotification *localNotification = [[UILocalNotification alloc] init];
     
     // Set the date and time of the notification.
     localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:10];
     
     // Set the message body of the notification.
-    localNotification.alertBody = @"Your dog is reaching his goal before you!!";
+    
+    NSString *notify = [[NSString alloc] init];
+    
+    switch (ranNum)
+    {
+        case 1:
+            notify = [NSString stringWithFormat:@"%@ has more activity than you today!", appDelegate.dogName ?: @"Your dog"];
+            break;
+        case 2:
+            notify = [NSString stringWithFormat:@"%@ is lagging behind!!", appDelegate.dogName ?: @"Your dog"];
+            break;
+        case 3:
+            notify = [NSString stringWithFormat:@"You should sync your fitBit"];
+            break;
+        case 4:
+            notify = [NSString stringWithFormat:@"You should sync your fitBark"];
+            break;
+        case 5:
+            notify = [NSString stringWithFormat:@"Congratulations on both reaching your goals today!"];
+            break;
+        case 0:
+            notify = [NSString stringWithFormat:@"None of you have reached your goals yet!"];
+            break;
+            
+        default:
+            notify = [NSString stringWithFormat:@"Time to go for a walk!"];
+            break;
+    }
+    
+    [self saveNotification];
+    
+    localNotification.alertBody = notify;
     
     // Set the time zone of the notification.
     localNotification.timeZone = [NSTimeZone defaultTimeZone];
