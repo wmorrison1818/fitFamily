@@ -420,6 +420,7 @@
 				3DFD479D1B5AB17000D55582 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3DFD479E1B5AB17000D55582 /* Build configuration list for PBXNativeTarget "fitFamilyTests" */ = {
 			isa = XCConfigurationList;
@@ -428,6 +429,7 @@
 				3DFD47A01B5AB17000D55582 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

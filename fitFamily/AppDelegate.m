@@ -24,7 +24,6 @@
         [application cancelAllLocalNotifications];
     }
     
-    return YES;
     // Override point for customization after application launch.
     return YES;
 }
