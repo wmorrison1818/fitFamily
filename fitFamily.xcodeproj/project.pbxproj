@@ -7,14 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0CC66183D80CC0622FB999AF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8021261AFEA2FC29589A747F /* libPods.a */; };
 		3DFD477B1B5AB17000D55582 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFD477A1B5AB17000D55582 /* main.m */; };
 		3DFD477E1B5AB17000D55582 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFD477D1B5AB17000D55582 /* AppDelegate.m */; };
 		3DFD47811B5AB17000D55582 /* fitFamily.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3DFD477F1B5AB17000D55582 /* fitFamily.xcdatamodeld */; };
-		3DFD47841B5AB17000D55582 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFD47831B5AB17000D55582 /* ViewController.m */; };
 		3DFD47871B5AB17000D55582 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DFD47851B5AB17000D55582 /* Main.storyboard */; };
 		3DFD47891B5AB17000D55582 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DFD47881B5AB17000D55582 /* Images.xcassets */; };
 		3DFD478C1B5AB17000D55582 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DFD478A1B5AB17000D55582 /* LaunchScreen.xib */; };
 		3DFD47981B5AB17000D55582 /* fitFamilyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFD47971B5AB17000D55582 /* fitFamilyTests.m */; };
+		4E33FF301B5B13FD00047069 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 4E33FF2E1B5B13FD00047069 /* Podfile */; };
+		4E33FF311B5B13FD00047069 /* SampleFitBit.json in Resources */ = {isa = PBXBuildFile; fileRef = 4E33FF2F1B5B13FD00047069 /* SampleFitBit.json */; };
+		4E33FF361B5B215F00047069 /* FDCompareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E33FF331B5B215F00047069 /* FDCompareViewController.m */; };
+		4E33FF371B5B215F00047069 /* FDGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E33FF351B5B215F00047069 /* FDGraphViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,14 +38,21 @@
 		3DFD477C1B5AB17000D55582 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3DFD477D1B5AB17000D55582 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3DFD47801B5AB17000D55582 /* fitFamily.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = fitFamily.xcdatamodel; sourceTree = "<group>"; };
-		3DFD47821B5AB17000D55582 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		3DFD47831B5AB17000D55582 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		3DFD47861B5AB17000D55582 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3DFD47881B5AB17000D55582 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3DFD478B1B5AB17000D55582 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		3DFD47911B5AB17000D55582 /* fitFamilyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fitFamilyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DFD47961B5AB17000D55582 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3DFD47971B5AB17000D55582 /* fitFamilyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = fitFamilyTests.m; sourceTree = "<group>"; };
+		4E33FF2E1B5B13FD00047069 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		4E33FF2F1B5B13FD00047069 /* SampleFitBit.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SampleFitBit.json; sourceTree = "<group>"; };
+		4E33FF321B5B215F00047069 /* FDCompareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDCompareViewController.h; path = FDCompareViewController.h; sourceTree = "<group>"; };
+		4E33FF331B5B215F00047069 /* FDCompareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FDCompareViewController.m; path = FDCompareViewController.m; sourceTree = "<group>"; };
+		4E33FF341B5B215F00047069 /* FDGraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDGraphViewController.h; path = FDGraphViewController.h; sourceTree = "<group>"; };
+		4E33FF351B5B215F00047069 /* FDGraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FDGraphViewController.m; path = FDGraphViewController.m; sourceTree = "<group>"; };
+		8021261AFEA2FC29589A747F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CC5EA309E662BBB1CA15A5C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		9861CB7D6B5358B04AF7E9EC /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CC66183D80CC0622FB999AF /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +80,10 @@
 				3DFD47771B5AB17000D55582 /* fitFamily */,
 				3DFD47941B5AB17000D55582 /* fitFamilyTests */,
 				3DFD47761B5AB17000D55582 /* Products */,
+				4E33FF2E1B5B13FD00047069 /* Podfile */,
+				4E33FF2F1B5B13FD00047069 /* SampleFitBit.json */,
+				F8642F970A5AEC50AFC9CCF2 /* Pods */,
+				AFA453BCCAE6DC2DD59B12D2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,10 +99,12 @@
 		3DFD47771B5AB17000D55582 /* fitFamily */ = {
 			isa = PBXGroup;
 			children = (
+				4E33FF321B5B215F00047069 /* FDCompareViewController.h */,
+				4E33FF331B5B215F00047069 /* FDCompareViewController.m */,
+				4E33FF341B5B215F00047069 /* FDGraphViewController.h */,
+				4E33FF351B5B215F00047069 /* FDGraphViewController.m */,
 				3DFD477C1B5AB17000D55582 /* AppDelegate.h */,
 				3DFD477D1B5AB17000D55582 /* AppDelegate.m */,
-				3DFD47821B5AB17000D55582 /* ViewController.h */,
-				3DFD47831B5AB17000D55582 /* ViewController.m */,
 				3DFD47851B5AB17000D55582 /* Main.storyboard */,
 				3DFD47881B5AB17000D55582 /* Images.xcassets */,
 				3DFD478A1B5AB17000D55582 /* LaunchScreen.xib */,
@@ -122,6 +140,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		AFA453BCCAE6DC2DD59B12D2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8021261AFEA2FC29589A747F /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F8642F970A5AEC50AFC9CCF2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8CC5EA309E662BBB1CA15A5C /* Pods.debug.xcconfig */,
+				9861CB7D6B5358B04AF7E9EC /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -129,9 +164,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3DFD479B1B5AB17000D55582 /* Build configuration list for PBXNativeTarget "fitFamily" */;
 			buildPhases = (
+				2560DFE242E200024AAD8F00 /* Check Pods Manifest.lock */,
 				3DFD47711B5AB17000D55582 /* Sources */,
 				3DFD47721B5AB17000D55582 /* Frameworks */,
 				3DFD47731B5AB17000D55582 /* Resources */,
+				AE9B11A3028E5FE293E72140 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -204,6 +241,8 @@
 			files = (
 				3DFD47871B5AB17000D55582 /* Main.storyboard in Resources */,
 				3DFD478C1B5AB17000D55582 /* LaunchScreen.xib in Resources */,
+				4E33FF311B5B13FD00047069 /* SampleFitBit.json in Resources */,
+				4E33FF301B5B13FD00047069 /* Podfile in Resources */,
 				3DFD47891B5AB17000D55582 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,15 +256,49 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2560DFE242E200024AAD8F00 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AE9B11A3028E5FE293E72140 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3DFD47711B5AB17000D55582 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E33FF361B5B215F00047069 /* FDCompareViewController.m in Sources */,
 				3DFD477E1B5AB17000D55582 /* AppDelegate.m in Sources */,
 				3DFD47811B5AB17000D55582 /* fitFamily.xcdatamodeld in Sources */,
-				3DFD47841B5AB17000D55582 /* ViewController.m in Sources */,
 				3DFD477B1B5AB17000D55582 /* main.m in Sources */,
+				4E33FF371B5B215F00047069 /* FDGraphViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,6 +422,7 @@
 		};
 		3DFD479C1B5AB17000D55582 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8CC5EA309E662BBB1CA15A5C /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = fitFamily/Info.plist;
@@ -359,6 +433,7 @@
 		};
 		3DFD479D1B5AB17000D55582 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9861CB7D6B5358B04AF7E9EC /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = fitFamily/Info.plist;
@@ -420,6 +495,7 @@
 				3DFD479D1B5AB17000D55582 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3DFD479E1B5AB17000D55582 /* Build configuration list for PBXNativeTarget "fitFamilyTests" */ = {
 			isa = XCConfigurationList;
@@ -428,6 +504,7 @@
 				3DFD47A01B5AB17000D55582 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
