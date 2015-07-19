@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FDActivityGraphViewController">
+            <connections>
+                <outlet property="activityPlot" destination="LCr-pS-HY2" id="nTD-ty-6fw"/>
+                <outlet property="activityRange" destination="lfl-jd-wzt" id="2Nf-DN-ZO2"/>
+                <outlet property="view" destination="iN0-l3-epB" id="l6c-Mf-eaE"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="568" height="177"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="lfl-jd-wzt">
+                    <rect key="frame" x="231" y="0.0" width="107" height="30"/>
+                    <segments>
+                        <segment title="Week"/>
+                        <segment title="Month"/>
+                    </segments>
+                    <connections>
+                        <action selector="segmentChanged:" destination="-1" eventType="valueChanged" id="GQV-nh-yMJ"/>
+                    </connections>
+                </segmentedControl>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LCr-pS-HY2">
+                    <rect key="frame" x="0.0" y="37" width="568" height="140"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="140" id="TeR-hh-fAe"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="LCr-pS-HY2" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="KRc-ay-yyK"/>
+                <constraint firstAttribute="centerX" secondItem="lfl-jd-wzt" secondAttribute="centerX" id="Kop-gk-Iiy"/>
+                <constraint firstItem="lfl-jd-wzt" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="231" id="Nfm-2p-Cv5"/>
+                <constraint firstItem="lfl-jd-wzt" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="NhZ-g3-ICM"/>
+                <constraint firstAttribute="trailing" secondItem="lfl-jd-wzt" secondAttribute="trailing" constant="230" id="YU7-Ma-vtr"/>
+                <constraint firstAttribute="bottom" secondItem="LCr-pS-HY2" secondAttribute="bottom" id="bcW-mG-e1o"/>
+                <constraint firstItem="LCr-pS-HY2" firstAttribute="top" secondItem="lfl-jd-wzt" secondAttribute="bottom" constant="8" id="fYu-av-hS3"/>
+                <constraint firstAttribute="trailing" secondItem="LCr-pS-HY2" secondAttribute="trailing" id="iAV-Pd-Qwn"/>
+                <constraint firstItem="LCr-pS-HY2" firstAttribute="top" secondItem="lfl-jd-wzt" secondAttribute="bottom" constant="7" id="xYR-C3-hdD"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="xYR-C3-hdD"/>
+                    <exclude reference="Nfm-2p-Cv5"/>
+                    <exclude reference="YU7-Ma-vtr"/>
+                </mask>
+            </variation>
+        </view>
+    </objects>
+</document>

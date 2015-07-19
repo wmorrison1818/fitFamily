@@ -7,24 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FDGraphViewController.h"
+#import "FDActivityGraphViewController.h"
 
 @interface FDCompareViewController : UIViewController
 
-// Text fields to enter fit IDs
-@property (weak, nonatomic) IBOutlet UITextField *fitbitID;
-@property (weak, nonatomic) IBOutlet UITextField *fitBarkID;
 // views for the graphs to subview
 @property (weak, nonatomic) IBOutlet UIView *fitbitView;
 @property (weak, nonatomic) IBOutlet UIView *fitBarkView;
 // Statement about your activity relative to dog
 @property (weak, nonatomic) IBOutlet UILabel *activityCompare;
+@property (weak, nonatomic) IBOutlet UILabel *userActivity;
+@property (weak, nonatomic) IBOutlet UILabel *dogActivity;
 // Data for graphs
 @property (strong, nonatomic) NSDictionary *fitbitResults;
 @property (strong, nonatomic) NSDictionary *fitBarkResults;
 // Graph views
-@property (strong, nonatomic) FDGraphViewController *fitbitGraph;
-@property (strong, nonatomic) FDGraphViewController *fitBarkGraph;
+@property (strong, nonatomic) FDActivityGraphViewController *fitbitGraph;
+@property (strong, nonatomic) FDActivityGraphViewController *fitBarkGraph;
 // Submit request to retrieve fitbit/FitBark activity
 - (IBAction)fitbitSubmit:(id)sender;
 - (IBAction)fitBarkSubmit:(id)sender;

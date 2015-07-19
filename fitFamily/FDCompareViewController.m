@@ -1,5 +1,5 @@
 //
-//  ViewController.m
+//  FDCompareViewController.m
 //  fitFamily
 //
 //  Created by William Morrison on 7/18/15.
@@ -9,6 +9,7 @@
 #import "FDCompareViewController.h"
 #import <AFNetworking/AFNetworking.h>
 #import "DayViewController.h"
+#import "FDDailyActivity.h"
 
 @interface FDCompareViewController ()
 
@@ -40,17 +41,11 @@
 #pragma mark - Your Methods
 
 - (void)viewDidLoad {
+    [super viewDidLoad];
+    
     if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]) {
         [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeSound|UIUserNotificationTypeBadge categories:nil]];
     }
-    
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (IBAction)buttonPressed:(id)sender {
@@ -70,53 +65,87 @@
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
 }
 
-- (FDGraphViewController *)fitbitGraph {
+- (FDActivityGraphViewController *)fitbitGraph {
     if (!_fitbitGraph) {
-        _fitbitGraph = [[FDGraphViewController alloc] init];
+        _fitbitGraph = [[FDActivityGraphViewController alloc] init];
+        [_fitbitGraph willMoveToParentViewController:self];
+        [self addChildViewController:_fitbitGraph];
         [self.fitbitView addSubview:_fitbitGraph.view];
+        [_fitbitGraph didMoveToParentViewController:self];
     }
     return _fitbitGraph;
 }
 
-- (FDGraphViewController *)fitBarkGraph {
+- (FDActivityGraphViewController *)fitBarkGraph {
     if (!_fitBarkGraph) {
-        _fitBarkGraph = [[FDGraphViewController alloc] init];
+        _fitBarkGraph = [[FDActivityGraphViewController alloc] init];
+        [_fitBarkGraph willMoveToParentViewController:self];
+        [self addChildViewController:_fitBarkGraph];
         [self.fitBarkView addSubview:_fitBarkGraph.view];
+        [_fitBarkGraph didMoveToParentViewController:self];
     }
     return _fitBarkGraph;
 }
 
 - (void)fitbitSubmit:(id)sender {
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"SampleFitBit" ofType:@"json"];
-    NSData *sampleData = [NSData dataWithContentsOfFile:path];
-    NSError *error;
-    
-    NSDictionary *dataDict = [NSJSONSerialization JSONObjectWithData:sampleData options:0 error:&error];
-    self.fitbitGraph.dataPoints = dataDict;
+    __weak FDCompareViewController *weakSelf = self;
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:@"https://aqueous-mountain-6591.herokuapp.com/fitbark/29deef75ecf5b43d012d05bec21b43acba0c20215350930e9ac9890e966d5ceb" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"JSON object %@: %@", [responseObject class], responseObject);
+    [manager GET:@"http://aqueous-mountain-6591.herokuapp.com/fitbit" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        if ([responseObject isKindOfClass:[NSArray class]]) {
+            self.userActivity.text = [NSString stringWithFormat:@"%@'s activity", [responseObject[0] objectForKey:@"name"]];
+            id log = [responseObject[0] objectForKey:@"log"];
+            if ([log isKindOfClass:[NSArray class]]) {
+                weakSelf.fitbitGraph.activity = [weakSelf mapActivityArrayFromResponse:log];
+            }
+        }
+        else {
+            NSLog(@"JSON object %@: %@", [responseObject class], responseObject);
+        }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [weakSelf presentRequestFailedAlert];
         NSLog(@"Error: %@", error);
     }];
-    
-    
 }
 
-- (void)fitBarkSubmit:(id)sender {
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"SampleFitBit" ofType:@"json"];
-    NSData *sampleData = [NSData dataWithContentsOfFile:path];
-    NSError *error;
-    
-    self.fitBarkResults = [NSJSONSerialization JSONObjectWithData:sampleData options:0 error:&error];
+- (void)fitBarkSubmit:(id)sender {    
+    __weak FDCompareViewController *weakSelf = self;
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:@"https://aqueous-mountain-6591.herokuapp.com/fitbark/29deef75ecf5b43d012d05bec21b43acba0c20215350930e9ac9890e966d5ceb" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"JSON object %@: %@", [responseObject class], responseObject);
+        if ([responseObject isKindOfClass:[NSArray class]]) {
+            self.dogActivity.text = [NSString stringWithFormat:@"%@'s activity", [responseObject[0] objectForKey:@"name"]];
+            id log = [responseObject[0] objectForKey:@"log"];
+            if ([log isKindOfClass:[NSArray class]]) {
+                weakSelf.fitBarkGraph.activity = [weakSelf mapActivityArrayFromResponse:log];
+            }
+        }
+        else {
+            NSLog(@"JSON object %@: %@", [responseObject class], responseObject);
+        }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [weakSelf presentRequestFailedAlert];
         NSLog(@"Error: %@", error);
     }];
+}
+
+/**
+ * Show alert indicating the network request failed
+ */
+- (void)presentRequestFailedAlert {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Network error" message:@"Request failed" preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil]];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (NSArray *)mapActivityArrayFromResponse:(NSArray *)response {
+    NSMutableArray *activity = [[NSMutableArray alloc] init];
+    
+    for (NSDictionary *dict in response) {
+        [activity addObject:[FDDailyActivity activityFromDictionary:dict]];
+    }
+    
+    return activity;
 }
 
 @end

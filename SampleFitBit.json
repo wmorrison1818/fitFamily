@@ -1,6 +1,278 @@
-{
-    "2015-07-09" : 10000,
-    "2015-07-10" : 9782,
-    "2015-07-11" : 12341,
-    "2015-07-12" : 4421
-}
+[
+ {
+ "id" : "36CRJ7",
+ "log" :     [
+              {
+              "activity" : 8240,
+              "date" : "2015-06-20",
+              "min_active" : 314,
+              "min_play" : 0,
+              "min_rest" : 590,
+              "percent_done" : "82.39999999999999",
+              "target" : 10000
+              },
+              {
+              "activity" : 11524,
+              "date" : "2015-06-21",
+              "min_active" : 270,
+              "min_play" : 24,
+              "min_rest" : 593,
+              "percent_done" : "115.24",
+              "target" : 10000
+              },
+              {
+              "activity" : 11176,
+              "date" : "2015-06-22",
+              "min_active" : 284,
+              "min_play" : 12,
+              "min_rest" : 714,
+              "percent_done" : "111.76",
+              "target" : 10000
+              },
+              {
+              "activity" : 6155,
+              "date" : "2015-06-23",
+              "min_active" : 225,
+              "min_play" : 0,
+              "min_rest" : 769,
+              "percent_done" : "61.55",
+              "target" : 10000
+              },
+              {
+              "activity" : 10354,
+              "date" : "2015-06-24",
+              "min_active" : 302,
+              "min_play" : 0,
+              "min_rest" : 695,
+              "percent_done" : "103.54",
+              "target" : 10000
+              },
+              {
+              "activity" : 5305,
+              "date" : "2015-06-25",
+              "min_active" : 226,
+              "min_play" : 0,
+              "min_rest" : 807,
+              "percent_done" : "53.05",
+              "target" : 10000
+              },
+              {
+              "activity" : 7732,
+              "date" : "2015-06-26",
+              "min_active" : 273,
+              "min_play" : 9,
+              "min_rest" : 691,
+              "percent_done" : "77.31999999999999",
+              "target" : 10000
+              },
+              {
+              "activity" : 10222,
+              "date" : "2015-06-27",
+              "min_active" : 254,
+              "min_play" : 24,
+              "min_rest" : 645,
+              "percent_done" : "102.22",
+              "target" : 10000
+              },
+              {
+              "activity" : 13556,
+              "date" : "2015-06-28",
+              "min_active" : 353,
+              "min_play" : 5,
+              "min_rest" : 669,
+              "percent_done" : "135.56",
+              "target" : 10000
+              },
+              {
+              "activity" : 7705,
+              "date" : "2015-06-29",
+              "min_active" : 250,
+              "min_play" : 8,
+              "min_rest" : 687,
+              "percent_done" : "77.05",
+              "target" : 10000
+              },
+              {
+              "activity" : 6260,
+              "date" : "2015-06-30",
+              "min_active" : 240,
+              "min_play" : 25,
+              "min_rest" : 646,
+              "percent_done" : "62.6",
+              "target" : 10000
+              },
+              {
+              "activity" : 1729,
+              "date" : "2015-07-01",
+              "min_active" : 9,
+              "min_play" : 0,
+              "min_rest" : 941,
+              "percent_done" : "17.29",
+              "target" : 10000
+              },
+              {
+              "activity" : 8539,
+              "date" : "2015-07-02",
+              "min_active" : 262,
+              "min_play" : 4,
+              "min_rest" : 758,
+              "percent_done" : "85.39",
+              "target" : 10000
+              },
+              {
+              "activity" : 13318,
+              "date" : "2015-07-03",
+              "min_active" : 387,
+              "min_play" : 16,
+              "min_rest" : 628,
+              "percent_done" : "133.18",
+              "target" : 10000
+              },
+              {
+              "activity" : 15985,
+              "date" : "2015-07-04",
+              "min_active" : 453,
+              "min_play" : 20,
+              "min_rest" : 565,
+              "percent_done" : "159.85",
+              "target" : 10000
+              },
+              {
+              "activity" : 3544,
+              "date" : "2015-07-05",
+              "min_active" : 202,
+              "min_play" : 0,
+              "min_rest" : 860,
+              "percent_done" : "35.44",
+              "target" : 10000
+              },
+              {
+              "activity" : 6358,
+              "date" : "2015-07-06",
+              "min_active" : 223,
+              "min_play" : 10,
+              "min_rest" : 770,
+              "percent_done" : "63.58000000000001",
+              "target" : 10000
+              },
+              {
+              "activity" : 5291,
+              "date" : "2015-07-07",
+              "min_active" : 221,
+              "min_play" : 0,
+              "min_rest" : 804,
+              "percent_done" : "52.91",
+              "target" : 10000
+              },
+              {
+              "activity" : 12038,
+              "date" : "2015-07-08",
+              "min_active" : 244,
+              "min_play" : 39,
+              "min_rest" : 702,
+              "percent_done" : "120.38",
+              "target" : 10000
+              },
+              {
+              "activity" : 6210,
+              "date" : "2015-07-09",
+              "min_active" : 175,
+              "min_play" : 13,
+              "min_rest" : 874,
+              "percent_done" : "62.1",
+              "target" : 10000
+              },
+              {
+              "activity" : 6355,
+              "date" : "2015-07-10",
+              "min_active" : 168,
+              "min_play" : 12,
+              "min_rest" : 886,
+              "percent_done" : "63.55",
+              "target" : 10000
+              },
+              {
+              "activity" : 6761,
+              "date" : "2015-07-11",
+              "min_active" : 154,
+              "min_play" : 24,
+              "min_rest" : 1175,
+              "percent_done" : "67.61",
+              "target" : 10000
+              },
+              {
+              "activity" : 10007,
+              "date" : "2015-07-12",
+              "min_active" : 273,
+              "min_play" : 15,
+              "min_rest" : 705,
+              "percent_done" : "100.07",
+              "target" : 10000
+              },
+              {
+              "activity" : 10217,
+              "date" : "2015-07-13",
+              "min_active" : 239,
+              "min_play" : 23,
+              "min_rest" : 745,
+              "percent_done" : "102.17",
+              "target" : 10000
+              },
+              {
+              "activity" : 6596,
+              "date" : "2015-07-14",
+              "min_active" : 205,
+              "min_play" : 0,
+              "min_rest" : 723,
+              "percent_done" : "65.95999999999999",
+              "target" : 10000
+              },
+              {
+              "activity" : 6239,
+              "date" : "2015-07-15",
+              "min_active" : 159,
+              "min_play" : 2,
+              "min_rest" : 820,
+              "percent_done" : "62.39",
+              "target" : 10000
+              },
+              {
+              "activity" : 7459,
+              "date" : "2015-07-16",
+              "min_active" : 224,
+              "min_play" : 8,
+              "min_rest" : 758,
+              "percent_done" : "74.59",
+              "target" : 10000
+              },
+              {
+              "activity" : 7356,
+              "date" : "2015-07-17",
+              "min_active" : 268,
+              "min_play" : 0,
+              "min_rest" : 564,
+              "percent_done" : "73.56",
+              "target" : 10000
+              },
+              {
+              "activity" : 1936,
+              "date" : "2015-07-18",
+              "min_active" : 76,
+              "min_play" : 0,
+              "min_rest" : 986,
+              "percent_done" : "19.36",
+              "target" : 10000
+              },
+              {
+              "activity" : 0,
+              "date" : "2015-07-19",
+              "min_active" : 0,
+              "min_play" : 0,
+              "min_rest" : 108,
+              "percent_done" : 0,
+              "target" : 10000
+              }
+              ],
+ "name" : "Scott Johnson"
+ }
+ ]
